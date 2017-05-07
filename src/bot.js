@@ -55,8 +55,13 @@ let invite_template = 'https://discordapp.com/api/oauth2/authorize?client_id=YOU
 
 bot.on('ready', () => {
     bot.utils = require('./utils');
-    
+
     commands.loadCommands(path.join(__dirname, 'commands'));
+
+    (title => {
+        process.title = title;
+        process.stdout.write(`\u001B]0;${title}\u0007`);
+    })(`SharpCore - ${bot.user.username}`);
 
     logger.info(stripIndents`Stats:
         - User: ${bot.user.username}#${bot.user.discriminator} <ID: ${bot.user.id}>
@@ -83,10 +88,10 @@ bot.on('message', msg => {
     if (msg.isMentioned(bot.user)) {
         stats.increment('mentions');
     }
-    
+
     if (!msg.content.startsWith(config.prefix)) return;
     if (msg.author.bot) return;
-    
+
     var split = msg.content.split(' ');
     var base = split[0].substr(config.prefix.length).toLowerCase();
     var args = split.slice(1);
@@ -95,7 +100,7 @@ bot.on('message', msg => {
 
     if (command) {
         commands.execute(msg, command, args);
-    } 
+    }
 });
 
 bot.on('error', console.error);
