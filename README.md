@@ -1,5 +1,10 @@
+# SharpCore is archived and no longer updated. 
+It will need significant work to work with. **Dependencies have known security vulnerabilities.** 
+
+If you would like a framework for a Discord Bot, I recommend you try my newer project [voidBot](https://www.github.com/abyss/voidBot).
+
 # SharpCore
-SharpCore is a userbot core for [Discord](http://discordapp.com) with [discord.js](https://discord.js.org). It doesn't have much use by itself, and will need commands and features added as you wish for your own bot.
+SharpCore is a bot core for [Discord](http://discordapp.com) with [discord.js](https://discord.js.org). It doesn't have much use by itself, and will need commands and features added as you wish for your own bot.
 
 It is based on SharpBot by Rayzr522, which you can find [here](https://github.com/Rayzr522/SharpBot).
 
